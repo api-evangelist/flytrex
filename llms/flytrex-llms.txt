@@ -1,0 +1,57 @@
+# Flytrex
+
+> Flytrex is an autonomous drone delivery operator headquartered in Tel Aviv, Israel,
+> with US operations centered on the Dallas-Fort Worth metroplex and North Carolina.
+> It flies food and small goods from partner restaurants and retailers to consumer
+> backyards in roughly five minutes using its own Sky-series aircraft, ground docks
+> and a remote-operations control center.
+
+## Agent-relevant status
+
+- **Public API: none.** Flytrex publishes no developer program, API reference, or
+  machine-readable specification (no OpenAPI, AsyncAPI, GraphQL SDL, or Postman
+  collection) at any location probed on 2026-08-16.
+- **MCP server: none.** No hosted or stdio Model Context Protocol server is published.
+- **A2A agent card: none.** `/.well-known/agent-card.json` and `/.well-known/agent.json`
+  return 404 on every Flytrex-controlled host.
+- **Retired developer program.** A public OAuth2 "Flytrex Live API" for consumer-drone
+  telemetry once ran at `x.flytrex.com`; that host no longer resolves in DNS. See
+  `lifecycle/flytrex-lifecycle.yml`.
+- **Merchant integration is not self-service.** The merchant surface is a sign-in-only
+  portal at partners.flytrex.com; onboarding runs through Flytrex's merchants form,
+  not through a published API.
+
+## Company
+
+- [Flytrex](https://www.flytrex.com/): Consumer drone delivery service and company site.
+- [Merchants](https://www.flytrex.com/merchants): Merchant partnership program and signup form.
+- [Merchant Portal](https://partners.flytrex.com/): Sign-in-only merchant operations portal.
+- [FAQ](https://www.flytrex.com/faq): Service coverage, drone range, and delivery questions.
+- [Airspace Coordination](https://www.flytrex.com/airspace-coordination): Shared-airspace and BVLOS operations posture.
+- [Press](https://www.flytrex.com/press): Company announcements and media coverage.
+- [Careers](https://www.flytrex.com/careers): Open roles.
+- [Contact](https://www.flytrex.com/contact-us): Support and general contact.
+
+## Legal
+
+- [Terms of Use](https://www.flytrex.com/legal/informational-terms-of-use): Site terms; governing law State of Israel; last updated May 2022.
+- [Privacy Policy](https://www.flytrex.com/legal/privacy-policy): Last updated December 2025; covers order, device and location data, and FAA-mandated three-year flight-record retention.
+- [EULA](https://www.flytrex.com/legal/eula): End user license agreement for the consumer apps.
+
+## Code
+
+- [GitHub organization](https://github.com/Flytrex): 35 public repositories, of which 34
+  are forks of upstream drone/embedded projects (ArduPilot, UAVCAN/DroneCAN, VESC,
+  ESP-IDF, MAVLink SDKs). No first-party API, SDK, or specification repository.
+
+## Consumer apps
+
+- [iOS app](https://apps.apple.com/us/app/flytrex/id1479695237)
+- [Android app](https://play.google.com/store/apps/details?id=com.flytrex.foodapp)
+
+## API Evangelist artifacts
+
+- `apis.yml`: APIs.json profile for Flytrex.
+- `lifecycle/flytrex-lifecycle.yml`: Retired Flytrex Live API developer program and decommissioning evidence.
+- `security/flytrex-domain-security.yml`: Probed TLS, HSTS, DNSSEC, CAA, SPF and DMARC posture.
+- `well-known/flytrex-well-known.yml`: Probed `/.well-known/` surface across all hosts (zero documents served).

@@ -1,0 +1,87 @@
+generated: '2026-08-16'
+method: probed
+source: live GET probes of /.well-known/* on every Flytrex host
+note: >-
+  Every /.well-known/ path probed on Flytrex's own domain returned 404. No document
+  was served, so NO WellKnown or SecurityTxt pointer is emitted in apis.yml — this
+  file records a verified absence, not a presence.
+hosts:
+- host: https://www.flytrex.com
+  resolves: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://flytrex.com
+  resolves: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://api.flytrex.com
+  resolves: false
+  note: >-
+    No DNS A or CNAME record. Host does not exist; every probe failed at resolution
+    rather than returning an HTTP status.
+  documents: []
+- host: https://partners.flytrex.com
+  resolves: true
+  note: >-
+    REJECTED AS FALSE POSITIVE. This host is a client-rendered single-page merchant
+    portal (Lovable-built) whose catch-all returns HTTP 200 with the identical
+    text/html shell for EVERY path, including a deliberately bogus control path
+    (/totally-bogus-path-xyz123 -> 200, text/html). The 200s below are the SPA shell,
+    not documents. No well-known document is actually served here.
+  control_probe:
+    path: /totally-bogus-path-xyz123
+    status: 200
+    content_type: text/html
+    verdict: catch-all confirmed
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    served_document: false
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    served_document: false
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    served_document: false
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    served_document: false
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    served_document: false
+summary:
+  documents_served: 0
+  hosts_probed: 4
+  hosts_resolving: 3
+  false_positive_hosts: 1

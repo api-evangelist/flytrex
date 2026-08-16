@@ -1,17 +1,31 @@
 aid: flytrex
 name: Flytrex
-description: 'Flytrex is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Flytrex is an autonomous drone delivery operator headquartered in Tel
+  Aviv, Israel, with US operations centered on the Dallas-Fort Worth metroplex and
+  North Carolina. The company runs an end-to-end backyard delivery service that flies
+  food and small goods from partner restaurants and retailers to consumer homes in
+  roughly five minutes, operating its own Sky-series multirotor aircraft, ground docks,
+  and a remote-operations control center. Flytrex sells to consumers through its own
+  iOS and Android ordering apps and to merchants through a partner portal, and routes
+  demand from third-party marketplaces including DoorDash and Uber Eats. It does not
+  currently publish a public developer program, API reference, or machine-readable
+  specification.'
 url: https://raw.githubusercontent.com/api-evangelist/flytrex/refs/heads/main/apis.yml
+image: https://www.flytrex.com/og-image.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-16'
 modified: '2026-08-16'
 tags:
 - Company
+- Drone Delivery
+- Last Mile Delivery
+- Logistics
+- Autonomous Systems
+- Unmanned Aerial Vehicles
+- Aviation
+- Food Delivery
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +33,50 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/flytrex-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/flytrex-stock
+  url: https://www.flytrex.com/
+- type: Support
+  url: https://www.flytrex.com/contact-us
+- type: TermsOfService
+  url: https://www.flytrex.com/legal/informational-terms-of-use
+- type: PrivacyPolicy
+  url: https://www.flytrex.com/legal/privacy-policy
+- type: Login
+  url: https://partners.flytrex.com/
+- type: GitHubOrganization
+  url: https://github.com/Flytrex
+- type: Press
+  url: https://www.flytrex.com/press
+- type: Careers
+  url: https://www.flytrex.com/careers
+- type: Lifecycle
+  url: lifecycle/flytrex-lifecycle.yml
+- type: LLMsTxt
+  url: llms/flytrex-llms.txt
+x-enrichment:
+  date: '2026-08-16'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Flytrex's only public developer program, the OAuth2 Flytrex Live API at
+    x.flytrex.com, has been decommissioned to the point that the host has no DNS
+    record at all, and the current site offers merchants a sign-in portal and a
+    contact form in its place with no API mentioned anywhere.
+  evidence:
+  - url: http://x.flytrex.com/developers/live-api/
+    status: 0
+  - url: https://api.flytrex.com/openapi.json
+    status: 0
+  - url: https://www.flytrex.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.flytrex.com/llms.txt
+    status: 404
+  - url: https://www.flytrex.com/merchants
+    status: 200
+  checked: '2026-08-16'

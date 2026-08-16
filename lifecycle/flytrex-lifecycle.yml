@@ -1,0 +1,69 @@
+generated: '2026-08-16'
+method: searched
+source: https://web.archive.org/web/20210125072454/http://x.flytrex.com/developers/live-api/
+summary: >-
+  Flytrex previously operated a public OAuth2 developer program — the "Flytrex Live
+  API" (portal branded "Flytrex Sky API") at x.flytrex.com — serving the company's
+  original consumer-drone black-box telemetry product. That program has been fully
+  decommissioned: the developer host no longer exists in DNS. Flytrex's current
+  business is an operated drone delivery service, and it publishes no replacement
+  developer program, API reference, or machine-readable specification.
+
+current_state:
+  developer_program: retired
+  public_api: none
+  machine_readable_spec: none
+  status_page: null
+  deprecation_policy: null
+  sla: null
+  note: >-
+    No status page, deprecation policy, SLA, or versioning policy is published by
+    Flytrex at any location found during this pass.
+
+retired_programs:
+- name: Flytrex Live API
+  portal_name: Flytrex Sky API
+  host: x.flytrex.com
+  docs_url: http://x.flytrex.com/developers/live-api/
+  archived_url: https://web.archive.org/web/20210125072454/http://x.flytrex.com/developers/live-api/
+  last_archived: '2021-01-25'
+  status: decommissioned
+  decommission_evidence:
+    dns_a_record: none
+    dns_cname_record: none
+    live_probe_status: unresolvable
+    checked: '2026-08-16'
+  product_served: >-
+    Consumer drone tracking. The API exposed account data and live in-flight
+    telemetry streamed from the Flytrex Live black-box device, intended for building
+    real-time consumer-drone tracking and social tools. This product line predates
+    Flytrex's pivot to operated food delivery.
+  authentication:
+    type: oauth2
+    flow: authorization_code
+    registration: >-
+      Manual. Developers emailed developers@flytrex.com to have an app registered
+      and receive OAuth client credentials; there was no self-service signup.
+  documented_endpoints:
+  - /1/account/info/
+  - /1/account/info/%USER_ID%/
+  - /1/users/
+  - /1/live/user/%USER_ID%/
+  - /1/live/device/%DEVICE_ID%/
+  event_surface:
+    transport: SSE
+    documented_messages:
+    - msg_overlay
+    - mission_started
+    - init_mission_location
+    - clear_existing_mission_display
+  deprecation_handling: >-
+    No sunset notice, deprecation policy, or migration guidance was published. The
+    host and its documentation were removed outright.
+  x-evidence:
+    note: >-
+      Endpoint and auth detail above is transcribed from the Internet Archive
+      snapshot of Flytrex's own developer documentation. It is recorded here as
+      lifecycle history ONLY. No OpenAPI or other contract artifact has been derived
+      from it, because the host is dead and the contract is unverifiable against a
+      live service.
